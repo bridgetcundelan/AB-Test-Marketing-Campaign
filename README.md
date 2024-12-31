@@ -30,15 +30,15 @@ Two campaigns were performed by the company: <br>
 Control Campaign <br>
 Test Campaign <br> 
 
-<b> Prepare the Data: </b <br> 
-This Kaggle data set contains personal fitness tracker data from 30 FitBit users. Each eligible Fitbit user consented to the submission of personal tracker data, including minute-level output for physical activity, heart rate, and sleep monitoring. It includes information about daily activity, steps, and heart rate that can be used to explore users’ habits.
+<b> Prepare the Data: </b> <br> 
+This Kaggle data set contains metrics for 2 campaigns- a control and test campaign over a month period in August, 2019.  
 ROCCC Analysis:
 
-Reliability: Sampling bias may be present as it is unclear how users were chosen to participate. Furthermore, those willing to make their data public are likely to be more engaged FitBit users, which may skew the data. Finally, the data set does not specify gender. Since Bellabeat is a smart device company for women, it would be helpful to be able to segment that group.
-Originality: low, the data was collected from a third party survey, Amazon Mechanical Turk.
-Comprehensiveness: 30 users consented to share their data, which is the minimum sample size you should use for analysis. Two data sets only had data for 11-14 users ("weight_log_info_merged.csv & minuteSleep_merged.csv) so I removed those sets from my analysis. However, the data I used was comprehensive enough to allow me to answer the business objectives
-Current: Data is from 2016, so it may be outdated as smart device technology has evolved since then. Additionally, the data was collected during a short 3 month period, from 3.12.2016-5.12.2016. Data would be more reliable if it was collected over a longer period of time of at least a year.
-Cited: Data source cited well. <br>
+Reliability: The data set appears to be from a ficticious business. <br>
+Originality: Unclear <br> 
+Comprehensiveness: There are 2 .csv files showing performance of control campaign and test campaign. The data set shows comprehensive metrics to review performance of campaign, however there are a few null values which may distort the data. <br>
+Current: Data is from August 2019. It was collected over a short time period (1 month). We might have better insights if the company allowed both campaigns to run for a longer time period. <br>
+Cited: Data source not cited as it is from a ficticious business <br>
 
 <b> Data cleaning in Excel: </b> At this point I needed to change the date type on my 2 csv files-- control_group .csv & test_group.csv. I did this by opening the files in excel, using the text to columns command, and I then recombined 3 cells into correct date format for SQL (YYY-MM-DD). After this, I saved and re-uploaded the .csv files as 2 tables in SQL. <br> 
 
