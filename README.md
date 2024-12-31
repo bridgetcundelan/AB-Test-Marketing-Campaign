@@ -1,6 +1,28 @@
 # A-B-Test-Marketing-Campaign
 Analysis of an A/B test of a marketing campaign to determine effectiveness of campaign. 
 
+<b> About this Dataset: </b> <br>
+
+A/B testing helps in finding a better approach to finding customers, marketing products, getting a higher reach, or anything that helps a business convert most of its target customers into actual customers. <br>
+
+Below are all the features in the dataset: <br>
+
+Campaign Name: The name of the campaign <br>
+Date: Date of the record <br>
+Spend: Amount spent on the campaign in dollars <br>
+of Impressions: Number of impressions the ad crossed through the campaign <br>
+Reach: The number of unique impressions received in the ad <br>
+of Website Clicks: Number of website clicks received through the ads  <br>
+of Searches: Number of users who performed searches on the website <br>
+of View Content: Number of users who viewed content and products on the website <br>
+of Add to Cart: Number of users who added products to the cart <br>
+of Purchase: Number of purchases <br> <br>
+Two campaigns were performed by the company: <br>
+
+Control Campaign <br>
+Test Campaign <br> 
+
+
 Observations: Spent slightly more on test campaign. This is an issue. Not true test. <br>
 Missing/ null data on some lines <br>
 
