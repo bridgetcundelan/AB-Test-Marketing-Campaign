@@ -1,7 +1,15 @@
 # A-B-Test-Marketing-Campaign
-Analysis of an A/B test of a marketing campaign to determine effectiveness of campaign. 
 
-<b> About this Dataset: </b> <br>
+<b> Background: </b> The marketing department of a ficticious business is performing an A/B test of a marketing campaign to determine effectiveness of its campaign. They are using a control and test version of the campaign. <br>
+
+<b> Business Task: </b> Analyze performance of both campaigns to uncover trends & insights and determine if company should launch new campaign or if they need to make modifications before launch. <br>
+
+<b> Business Objectives: </b> <br>
+
+<b> Tools: </b> I will be using Excel for data cleaning, SQL for analysis, and Tableau for visualization. <br>
+
+<b> The Dataset: </b> <br> 
+Public dataset found on Kaggle called "A/B Testing DataSet" <br>
 
 A/B testing helps in finding a better approach to finding customers, marketing products, getting a higher reach, or anything that helps a business convert most of its target customers into actual customers. <br>
 
@@ -22,15 +30,11 @@ Two campaigns were performed by the company: <br>
 Control Campaign <br>
 Test Campaign <br> 
 
-
-Observations: Spent slightly more on test campaign. This is an issue. Not true test. <br>
-Missing/ null data on some lines <br>
-
-
 A/B Testing DataSet
 
 <b> Data cleaning in Excel: </b> At this point I needed to change the date type on my 2 csv files-- control_group .csv & test_group.csv. I did this by opening the files in excel, using the text to columns command, and I then recombined 3 cells into correct date format for SQL (YYY-MM-DD). After this, I saved and re-uploaded the .csv files as 2 tables in SQL. <br> 
 
+<b> Analyzing the data: </b> <br>
 <b> SQL Code: <br> </b>
 
 --create table for control_group csv file <br>
@@ -236,3 +240,17 @@ from <br>
 	test_group t <br>
 group by campaign_date, campaign_name <br>
 order by campaign_date; <br>
+
+<b> Share: </b> Dashboard can be found on my Tableau Public profile. <br>
+
+<b> Act: </b> <br>
+Key Trends & Findings:<br>
+
+Suggested next steps for marketing team: <br>
+
+
+
+Observations: Spent slightly more on test campaign. This is an issue. Not true test. <br>
+Missing/ null data on some lines <br>
+
+
