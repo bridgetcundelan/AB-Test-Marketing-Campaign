@@ -223,6 +223,9 @@ group by
 RESULTS:  
 •	Compare the rates of the Control Campaign versus the Test Campaign at each step to see which campaign performs better at driving conversions.
 HERE IS THE CODE ALL TOGETHER---- USE THIS AND USE DOWNLOADED CSV FILE TO PLOT!!
+
+---SOME STAGES OUT OF ORDER. Causes- multiple add to carts, abandoned carts, browsing without intent to buy, browsing for prices (price sensitivity), delayed purchase intent, technical difficulties with payment,  etc.
+
 select
 	b.campaign_name
 	,round(
@@ -451,5 +454,4 @@ Summary: Top 5 Key Questions to Explore
 4.	What is the Click-Through Rate (CTR) for each campaign?
 5.	How does campaign performance vary over time (spend, impressions, clicks, purchases)?
 By answering these questions, you'll gain a comprehensive understanding of the campaign's performance and be able to provide actionable insights.
-
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/904cd234-d768-4fb5-94d4-c73ca579ef22)
