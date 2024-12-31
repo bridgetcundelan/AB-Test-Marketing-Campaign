@@ -253,12 +253,12 @@ order by campaign_date; <br>
 
 <b> Act: </b> <br>
 Key Trends & Findings:<br>
+-The company spent slightly more money on the test campaign vs the control campaign. It would be better if the company spent the same on both campaigns so we could see a true comparision. <br>
+-There is some null data on a couple of lines. It is unclear why there is missing data. <br>
 
 Suggested next steps for marketing team: <br>
+-The results are so similar between the test & control campaigns, so I would not recommend they go forward with the test campaign. <br>
+-Questions for the marketing team- 
 
-
-
-Observations: Spent slightly more on test campaign. This is an issue. Not true test. <br>
-Missing/ null data on some lines <br>
 
 
