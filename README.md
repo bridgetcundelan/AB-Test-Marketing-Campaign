@@ -5,90 +5,80 @@ Analysis of an A/B test of a marketing campaign to determine effectiveness of ca
 
 A/B Testing DataSet
 
+<b> Data cleaning in Excel: </b> At this point I needed to change the date type on my 2 csv files-- control_group .csv & test_group.csv. I did this by opening the files in excel, using the text to columns command, and I then recombined 3 cells into correct date format for SQL (YYY-MM-DD). After this, I saved and re-uploaded the .csv files as 2 tables in SQL. <br> 
+
 <b> SQL Code: <br> </b>
 
---create table for control_group csv file
-create table control_group (
-	campaign_name varchar (255)
-	,campaign_date date
-	,spend_usd int
-	,impressions int
-	,reach int
-	,website_clicks int
-	,searches int
-	,content_views int
-	,add_to_cart int
-	,num_of_purchases int
-);
+--create table for control_group csv file <br>
+create table control_group ( <br>
+	campaign_name varchar (255) <br>
+	,campaign_date date <br>
+	,spend_usd int <br>
+	,impressions int <br>
+	,reach int <br>
+	,website_clicks int <br>
+	,searches int <br>
+	,content_views int <br>
+	,add_to_cart int <br>
+	,num_of_purchases int <br>
+); <br>
+
+--make sure table uploaded correctly <br>
+select * <br>
+from control_group; <br>
 
 
-Changed date on control_group .csv
--opened in excel
--used text to columns
--recombined 3 cells into correct date format for SQL (YYY-MM-DD)
--Resaved & uploaded into table.
+--create table for test_group csv <br>
+create table test_group ( <br>
+	campaign_name varchar (255) <br>
+	,campaign_date date <br>
+	,spend_usd int <br>
+	,impressions int <br>
+	,reach int <br>
+	,website_clicks int <br>
+	,searches int <br>
+	,content_views int <br>
+	,add_to_cart int <br>
+	,num_of_purchases int <br>
+); <br>
 
---make sure table uploaded correctly
-select *
-from control_group;
+--make sure table uploaded correctly <br>
+select * <br>
+from test_group; <br>
 
-Changed date on test_group .csv
--opened in excel
--used text to columns
--recombined 3 cells into correct date format for SQL (YYY-MM-DD)
--Resaved & uploaded into table.
+/*create a temp table combining data from both test_group table and control_group since they have the same column names. I will use this temp table to run queries */ <br>
+create temp table control_test_together as ( <br>
+	select <br>
+		c.campaign_name <br>
+		,c.campaign_date <br>
+		,c.spend_usd <br>
+		,c.impressions <br>
+		,c.reach <br>
+		,c.website_clicks <br>
+		,c.searches <br>
+		,c.content_views <br>
+		,c.add_to_cart <br>
+		,c.num_of_purchases <br>
+	from  <br>
+		control_group c <br>
+	union all  <br>
+		select <br>
+			t.campaign_name <br>
+			,t.campaign_date <br>
+			,t.spend_usd <br>
+			,t.impressions <br>
+			,t.reach <br>
+			,t.website_clicks <br>
+			,t.searches <br>
+			,t.content_views <br>
+			,t.add_to_cart <br>
+			,t.num_of_purchases <br>
+				from  <br>
+					test_group t <br>
+) <br>
 
---create table for test_group csv
-create table test_group (
-	campaign_name varchar (255)
-	,campaign_date date
-	,spend_usd int
-	,impressions int
-	,reach int
-	,website_clicks int
-	,searches int
-	,content_views int
-	,add_to_cart int
-	,num_of_purchases int
-);
-
---make sure table uploaded correctly
-select *
-from test_group;
-
-/*create a temp table combining data from both test_group table and control_group since they have the same column names. I will use this temp table to run queries */
-create temp table control_test_together as (
-	select 
-		c.campaign_name
-		,c.campaign_date
-		,c.spend_usd
-		,c.impressions
-		,c.reach
-		,c.website_clicks
-		,c.searches
-		,c.content_views
-		,c.add_to_cart
-		,c.num_of_purchases
-	from 
-		control_group c
-	union all 
-		select 
-			t.campaign_name
-			,t.campaign_date
-			,t.spend_usd
-			,t.impressions
-			,t.reach
-			,t.website_clicks
-			,t.searches
-			,t.content_views
-			,t.add_to_cart
-			,t.num_of_purchases
-				from 
-					test_group t
-)
-
---view new temp table
-select * from control_test_together
+--view new temp table <br>
+select * from control_test_together <br>
 
 /*Answer question: What is the total spend, total impressions, total reach, and website views for each campaign? */
 select
