@@ -9,7 +9,7 @@
 <b> Tools: </b> I will be using Excel for data cleaning, SQL for analysis, and Tableau for visualization. <br>
 
 <b> The Dataset: </b> <br> 
-Public dataset found on Kaggle called "A/B Testing DataSet" <br>
+Public dataset found on Kaggle called "A/B Testing DataSet" https://www.kaggle.com/datasets/amirmotefaker/ab-testing-dataset/data <br>
 
 A/B testing helps in finding a better approach to finding customers, marketing products, getting a higher reach, or anything that helps a business convert most of its target customers into actual customers. <br>
 
