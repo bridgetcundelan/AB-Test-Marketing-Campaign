@@ -188,7 +188,7 @@ from <br>
 group by <br>
 campaign_name; <br>
 
-/*Which campaign has the highest Return on Investment (ROI)? Why this matters: ROI is one of the most critical metrics in marketing. It measures how effectively each campaign is turning its spending into actual revenue (or purchases, in this case). Results: Control has slightly higher ROI, which shows it’s a more cost effective campaign*/ <br>
+/* Which campaign has the highest Return on Investment (ROI)? Why this matters: ROI is one of the most critical metrics in marketing. It measures how effectively each campaign is turning its spending into actual revenue (or purchases, in this case). Results: Control has slightly higher ROI, which shows it’s a more cost effective campaign */ <br>
 select <br>
 	b.campaign_name <br>
 	,sum(b.spend_usd) as total_spend <br>
