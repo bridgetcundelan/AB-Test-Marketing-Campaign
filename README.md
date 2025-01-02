@@ -147,7 +147,7 @@ from
 group by  
 	b.campaign_name; 
 ```
-<img src="https://github.com/user-attachments/assets/cd350011-0803-4b90-9bed-9652884e54b8" width="700">
+<img src="https://github.com/user-attachments/assets/c38afb8c-2bc4-468c-a536-71ed80265c8f" width="700">
 
 `/* Next I want to evaluate funnel performance for both campaigns to see which is more effective at converting impressions into purchases. I will calculate the conversion rate at each stage for both campaigns. I used the coalesce function to deal with a couple of null values in my dataset. Results show 8% CTR for test campaign and 5% for control campaign. */`
 ```
