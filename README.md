@@ -145,6 +145,7 @@ from
 group by  
 	b.campaign_name; 
 ```
+<img src="https://github.com/user-attachments/assets/cd350011-0803-4b90-9bed-9652884e54b8" width="700">
 
 `/* Next I want to evaluate funnel performance for both campaigns to see which is more effective at converting impressions into purchases. I will calculate the conversion rate at each stage for both campaigns. I used the coalesce function to deal with a couple of null values in my dataset. Results show 8% CTR for test campaign and 5% for control campaign. */`
 ```
@@ -212,6 +213,7 @@ from control_test_together b
 group by 
 	b.campaign_name; 
 ```
+<img src="https://github.com/user-attachments/assets/43441e63-1cf9-4cea-bf55-17e87ddb7c37" width="700">
 
 `/*How much did each campaign spend, and what was the relationship between spending and purchases? Why this matters: This question helps you understand how much money was invested in each campaign and whether the spending aligns with the number of purchases. */`
 ```
@@ -229,6 +231,7 @@ from
 group by 
     b.campaign_name;
 ```
+<img src="https://github.com/user-attachments/assets/3423e780-8f5e-43bf-bb4e-d6c596333fed" width="700">
 
 `/*How does the performance (spend, impressions, clicks, purchases) vary over time for each campaign? Why this matters: Understanding the time trends of campaign performance helps you identify patterns (e.g., which days performed better, seasonality effects, or if performance increased over time). I downloaded the resulting table and used it to visualize the relationship between ad spend and customer purchases in Tableau */`
 
@@ -267,6 +270,7 @@ Key Trends & Findings:<br>
 SOME STAGES OUT OF ORDER. Causes- multiple add to carts, abandoned carts, browsing without intent to buy, browsing for prices (price sensitivity), delayed purchase intent, technical difficulties with payment,  etc.
 Results: Control has slightly higher ROI, which shows it’s a more cost effective campaign
  Results show we spent about the same for both test & control campaign.
+-Control has slightly higher ROI, which shows it’s a more cost effective campaign![image](https://github.com/user-attachments/assets/6759cf01-52e8-48e5-af2c-b0f3cc91c59f)
 
  Analysis Steps: <br>
 •	Plot the performance metrics (spend, impressions, clicks, purchases, etc.) over time for both campaigns. <br>
