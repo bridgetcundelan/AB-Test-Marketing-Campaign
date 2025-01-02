@@ -231,9 +231,7 @@ group by
 ```
 
 `/*How does the performance (spend, impressions, clicks, purchases) vary over time for each campaign? Why this matters: Understanding the time trends of campaign performance helps you identify patterns (e.g., which days performed better, seasonality effects, or if performance increased over time). I downloaded the resulting table and used it to visualize the relationship between ad spend and customer purchases in Tableau */`
-Analysis Steps: <br>
-•	Plot the performance metrics (spend, impressions, clicks, purchases, etc.) over time for both campaigns. <br>
-•	Identify any patterns such as spikes in activity, steady growth, or any significant drops. <br>
+
 ```
 select  
 	c.campaign_date 
