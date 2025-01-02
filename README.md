@@ -1,6 +1,6 @@
 # A-B-Test-Marketing-Campaign
 
-<b> Background: </b> The marketing department of a ficticious business is performing an A/B test of a marketing campaign to determine effectiveness of its campaign. They are using a control and test version of the campaign. <br>
+<b> ### Background: </b> The marketing department of a ficticious business is performing an A/B test of a marketing campaign to determine effectiveness of its campaign. They are using a control and test version of the campaign. <br>
 
 <b> Business Task: </b> Analyze performance of both campaigns to uncover trends & insights and determine if company should launch new campaign or if they need to make modifications before launch. <br>
 
