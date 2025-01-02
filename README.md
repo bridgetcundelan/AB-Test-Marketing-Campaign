@@ -83,7 +83,8 @@ create table test_group (
 select * 
 from test_group; 
 ```
-After creating the tables, I imported the .csv files into their respective tables. <br>
+After creating the tables, I imported the .csv files into their respective tables. <br> <br>
+
 `/*create a temp table combining data from both test_group table and control_group since they have the same column names. I will use this temp table to run queries */ ` 
 ```
 create temp table control_test_together as ( 
