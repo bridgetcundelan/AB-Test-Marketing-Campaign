@@ -4,12 +4,10 @@
 
 <b> Business Task: </b> Analyze performance of both campaigns to uncover trends & insights and determine if company should launch new campaign or if they need to make modifications before launch. <br>
 
-<b> Business Objectives: </b> <br>
-
 <b> Tools: </b> I will be using Excel for data cleaning, SQL for analysis, and Tableau for visualization. <br>
 
 <b> The Dataset: </b> <br> 
-Public dataset found on Kaggle called "A/B Testing DataSet" https://www.kaggle.com/datasets/amirmotefaker/ab-testing-dataset/data <br>
+Public dataset found on Kaggle titled: [A/B Testing DataSet](https://www.kaggle.com/datasets/amirmotefaker/ab-testing-dataset/data)<br>
 
 A/B testing helps in finding a better approach to finding customers, marketing products, getting a higher reach, or anything that helps a business convert most of its target customers into actual customers. <br>
 
@@ -26,21 +24,20 @@ of View Content: Number of users who viewed content and products on the website 
 of Add to Cart: Number of users who added products to the cart <br>
 of Purchase: Number of purchases <br> <br>
 Two campaigns were performed by the company: <br>
-
 Control Campaign <br>
 Test Campaign <br> 
 
 <b> Prepare the Data: </b> <br> 
-This Kaggle data set contains metrics for 2 campaigns- a control and test campaign over a month period in August, 2019.  
+This Kaggle data set contains metrics for 2 campaigns- a Control and Test Campaign over a one-month period in August, 2019.  
 ROCCC Analysis:
 
 Reliability: The data set appears to be from a ficticious business. <br>
 Originality: Unclear <br> 
 Comprehensiveness: There are 2 .csv files showing performance of control campaign and test campaign. The data set shows comprehensive metrics to review performance of campaign, however there are a few null values which may distort the data. <br>
-Current: Data is from August 2019. It was collected over a short time period (1 month). We might have better insights if the company allowed both campaigns to run for a longer time period. <br>
+Current: Data is from August 2019. It was collected over a short time period (1 month). We might have better insights if the company ran both campaigns for a longer time period. <br>
 Cited: Data source not cited as it is from a ficticious business <br>
 
-<b> Data cleaning in Excel: </b> At this point I needed to change the date type on my 2 csv files-- control_group .csv & test_group.csv. I did this by opening the files in excel, using the text to columns command, and I then recombined 3 cells into correct date format for SQL (YYY-MM-DD). After this, I saved and re-uploaded the .csv files as 2 tables in SQL. <br> 
+<b> Data cleaning in Excel: </b> I first need to change the date type on my 2 csv files before it can be uploaded to SQL-- control_group .csv & test_group.csv. I did this by opening the files in excel, using the text to columns command, and I then recombined 3 cells into correct date format for SQL (YYY-MM-DD). After this, I saved and re-uploaded the .csv files as 2 tables in SQL. <br> 
 
 <b> Analyzing the data: </b> <br>
 <b> SQL Code: <br> </b>
