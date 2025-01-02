@@ -262,11 +262,15 @@ order by t.campaign_date;
 
 <b> Act: </b> <br>
 Key Trends & Findings:<br>
--The company spent slightly more money on the test campaign vs the control campaign. It would be better if the company spent the same on both campaigns so we could see a true comparision. <br>
+-The company spent slightly more money on the Test Campaign vs the Control Campaign. It would be better if the company spent the same on both campaigns so we could see a true comparision. <br>
 -There is some null data on a couple of lines. It is unclear why there is missing data. <br>
 SOME STAGES OUT OF ORDER. Causes- multiple add to carts, abandoned carts, browsing without intent to buy, browsing for prices (price sensitivity), delayed purchase intent, technical difficulties with payment,  etc.
 Results: Control has slightly higher ROI, which shows it’s a more cost effective campaign
  Results show we spent about the same for both test & control campaign.
+
+ Analysis Steps: <br>
+•	Plot the performance metrics (spend, impressions, clicks, purchases, etc.) over time for both campaigns. <br>
+•	Identify any patterns such as spikes in activity, steady growth, or any significant drops. <br>
 
 Suggested next steps for marketing team: <br>
 -The results are so similar between the test & control campaigns, so I would not recommend they go forward with the test campaign. <br>
