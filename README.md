@@ -267,14 +267,14 @@ order by t.campaign_date;
 
 <b> Act: </b> <br>
 Key Trends & Findings:<br>
--The company spent slightly more money on the Test Campaign vs the Control Campaign. It would be better if the company spent the same on both campaigns so we could see a true comparision. <br>
--As a result, the ROI of the Control Campaign was slightly higher than the Test Campaign, making it a more cost effective campaign. I believe this is due to the higher ad spend.
--There is some null data on a couple of lines. It is unclear why there is missing data. Finding this out would help improve accuracy of analysis. <br>
--Funnel Performance: For the Control Campaign, there is a higher "add to cart" conversion rate than a "purchase conversion rate" which is unexpected. Possible causes could be-- customers with multiple add to carts, abandoned carts, or technical difficulties with payment. I would recommend the marketing team have a look at this stage to uncover the reasons customers aren't converting to purchases & try and optimize. <br>
--Funnel Performance: For both campaigns, there is a higher "search conversion rate" than a "view content conversion rate." Possible causes could be- customers browsing for prices and waiting to buy (price sensitivity) or delayed purchase intent. I would recommend the marketing team look at this stage to optimize. Perhaps they could offer customers who reach their webiste a coupon to encourage them further down the funnel. <br>
--Ad spend vs customer purchase: customer purchases tended to correlated with ad spend and it went up and down during the month. <br>
+* The company spent slightly more money on the Test Campaign vs the Control Campaign. It would be better if the company spent the same on both campaigns so we could see a true comparision. <br>
+* As a result, the ROI of the Control Campaign was slightly higher than the Test Campaign, making it a more cost effective campaign. I believe this is due to the higher ad spend.
+* There is some null data on a couple of lines. It is unclear why there is missing data. Finding this out would help improve accuracy of analysis. <br>
+* Funnel Performance: For the Control Campaign, there is a higher "add to cart" conversion rate than a "purchase conversion rate" which is unexpected. Possible causes could be-- customers with multiple add to carts, abandoned carts, or technical difficulties with payment. I would recommend the marketing team have a look at this stage to uncover the reasons customers aren't converting to purchases & try and optimize. <br>
+* Funnel Performance: For both campaigns, there is a higher "search conversion rate" than a "view content conversion rate." Possible causes could be- customers browsing for prices and waiting to buy (price sensitivity) or delayed purchase intent. I would recommend the marketing team look at this stage to optimize. Perhaps they could offer customers who reach their webiste a coupon to encourage them further down the funnel. <br>
+* Ad spend vs customer purchase: customer purchases tended to correlated with ad spend and it went up and down during the month. <br>
 
 Suggested next steps for marketing team: <br>
--The results are so similar between the test & control campaigns, so I would not recommend they go forward with the test campaign. <br>
--I would recommend they consider offering a coupon for customers who provide their email address when they visit the website to encourage purchases & also review the check out process to optimize and uncover why customers aren't making the jump from "add to cart" to "purchase"
--After reviewing these customer touchpoints, they can once again test out a new "Test" and "Control" campaign with equal ad spend. 
+* The results are so similar between the test & control campaigns, so I would not recommend they go forward with the test campaign. <br>
+* I would recommend they consider offering a coupon for customers who provide their email address when they visit the website to encourage purchases & also review the check out process to optimize and uncover why customers aren't making the jump from "add to cart" to "purchase"
+* After reviewing these customer touchpoints, they can once again test out a new "Test" and "Control" campaign with equal ad spend. 
