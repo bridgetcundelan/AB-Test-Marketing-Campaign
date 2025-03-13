@@ -149,71 +149,83 @@ group by
 ```
 <img src="https://github.com/user-attachments/assets/c38afb8c-2bc4-468c-a536-71ed80265c8f" width="700">
 
-`/* Next I want to evaluate funnel performance for both campaigns to see which is more effective at converting impressions into purchases. I will calculate the conversion rate at each stage for both campaigns. I used the coalesce function to deal with a couple of null values in my dataset. Results show 8% CTR for test campaign and 5% for control campaign. */`
+`/* There were null values on one row on 8/5/2019 on my Control data set on every column except spend. In an ideal scenario, I would investigate why there are null values here. Unfortunately, I am unable to do so in this hypothetical scenario. I assume this may be a lag effect-- i.e. Google Ads were paid for late at night but the clicks and impressions were recorded on the next day. For this reason, I have decided to replace the null values for this date with "0".  Results show 8% CTR for test campaign and 5% for control campaign. */`
 ```
-select 
-	b.campaign_name 
-	,round( 
-        coalesce( 
-            cast(sum(coalesce(b.website_clicks, 0)) as DECIMAL(10, 2)) /  
-            nullif(cast(sum(coalesce(b.impressions, 0)) as DECIMAL(10, 2)), 0), 
-            0 
-        ), 
-		2 
-		) as click_through_rate
-	,round(
-        coalesce( 
-            cast(sum(coalesce(b.searches, 0)) as DECIMAL(10, 2)) / 
-            nullif(cast(sum(coalesce(b.website_clicks, 0)) as DECIMAL(10, 2)), 0),
-            0 
-        ), 
-		2 
-		) as search_conversion_rate 
-	,round( 
-        coalesce( 
-            cast(sum(coalesce(b.content_views, 0)) as DECIMAL(10, 2)) /  
-            nullif(cast(sum(coalesce(b.website_clicks, 0)) as DECIMAL(10, 2)), 0), 
-            0 
-        ), 
-		2 
-		) as view_content_conversion_rate
-	,round( 
-        coalesce( 
-            cast(sum(coalesce(b.add_to_cart, 0)) as DECIMAL(10, 2)) /  
-            nullif(cast(sum(coalesce(b.content_views, 0)) as DECIMAL(10, 2)), 0),  
-            0 
-        ), 
-		2
-		) as add_to_cart_conversion_rate 
-	,round( 
-        coalesce(
-            cast(sum(coalesce(b.num_of_purchases, 0)) as DECIMAL(10, 2)) /  
-            nullif(cast(sum(coalesce(b.add_to_cart, 0)) as DECIMAL(10, 2)), 0),  
-            0 
-        ), 
-		2 
-		) as purchase_conversion_rate 
-from 
-	control_test_together b 
-group by 
-b.campaign_name; 
+
+update control_test_together
+set impressions = 0
+	,reach = 0
+	,website_clicks = 0
+	,searches = 0
+	,content_views = 0
+	,add_to_cart = 0
+	,num_of_purchases = 0
+where impressions is null
+	or reach is null
+	or website_clicks is null
+	or searches is null
+	or content_views is null
+	or add_to_cart is null
+	or num_of_purchases is null
+;
+
+select * from control_test_together;
+```
+
+`/* Next I want to evaluate funnel performance for both campaigns to see which is more effective at converting impressions into purchases. I will calculate the conversion rate at each stage for both campaigns.  Results show 8% CTR for test campaign and 5% for control campaign. */`
+
+```
+SELECT 
+    b.campaign_name,
+    ROUND(
+        CAST(SUM(b.website_clicks) AS DECIMAL(10, 2)) /  
+        NULLIF(CAST(SUM(b.impressions) AS DECIMAL(10, 2)), 0), 
+        2
+    ) AS click_through_rate,
+    
+    ROUND(
+        CAST(SUM(b.searches) AS DECIMAL(10, 2)) / 
+        NULLIF(CAST(SUM(b.website_clicks) AS DECIMAL(10, 2)), 0),
+        2
+    ) AS search_conversion_rate,
+    
+    ROUND(
+        CAST(SUM(b.content_views) AS DECIMAL(10, 2)) /  
+        NULLIF(CAST(SUM(b.website_clicks) AS DECIMAL(10, 2)), 0), 
+        2
+    ) AS view_content_conversion_rate,
+    
+    ROUND(
+        CAST(SUM(b.add_to_cart) AS DECIMAL(10, 2)) /  
+        NULLIF(CAST(SUM(b.content_views) AS DECIMAL(10, 2)), 0),  
+        2
+    ) AS add_to_cart_conversion_rate,
+    
+    ROUND(
+        CAST(SUM(b.num_of_purchases) AS DECIMAL(10, 2)) /  
+        NULLIF(CAST(SUM(b.add_to_cart) AS DECIMAL(10, 2)), 0),  
+        2
+    ) AS purchase_conversion_rate
+FROM 
+    control_test_together b
+GROUP BY 
+    b.campaign_name;
 ```
 `/* Which campaign has the highest Return on Investment (ROI)? Why this matters: ROI is one of the most critical metrics in marketing. It measures how effectively each campaign is turning its spending into actual revenue (or purchases, in this case).  */`
 ```
-select 
-	b.campaign_name 
-	,sum(b.spend_usd) as total_spend 
-	,sum(b.num_of_purchases) as total_purchases 
-	,round ( 
-		coalesce( 
-        sum(cast(b.num_of_purchases as DECIMAL(10, 2))) /  
-        nullif(sum(cast(b.spend_usd as DECIMAL(10, 2))), 0),  
-        0 
-    )* 100, 2 
-	) as roi 
-from control_test_together b 
-group by 
-	b.campaign_name; 
+SELECT 
+    b.campaign_name,
+    SUM(b.spend_usd) AS total_spend,
+    SUM(b.num_of_purchases) AS total_purchases,
+    ROUND(
+        SUM(CAST(b.num_of_purchases AS DECIMAL(10, 2))) /  
+        NULLIF(SUM(CAST(b.spend_usd AS DECIMAL(10, 2))), 0),  
+        2
+    ) * 100 AS roi
+FROM 
+    control_test_together b
+GROUP BY 
+    b.campaign_name; 
 ```
 <img src="https://github.com/user-attachments/assets/43441e63-1cf9-4cea-bf55-17e87ddb7c37" width="700">
 
