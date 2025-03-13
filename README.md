@@ -176,56 +176,56 @@ select * from control_test_together;
 `/* Next I want to evaluate funnel performance for both campaigns to see which is more effective at converting impressions into purchases. I will calculate the conversion rate at each stage for both campaigns.  Results show 8% CTR for test campaign and 5% for control campaign. */`
 
 ```
-SELECT 
+select 
     b.campaign_name,
-    ROUND(
-        CAST(SUM(b.website_clicks) AS DECIMAL(10, 2)) /  
-        NULLIF(CAST(SUM(b.impressions) AS DECIMAL(10, 2)), 0), 
+    round(
+        cast(sum(b.website_clicks) as decimal(10, 2)) /  
+        nullif(cast(sum(b.impressions) as decimal(10, 2)), 0), 
         2
-    ) AS click_through_rate,
+    ) as click_through_rate,
     
-    ROUND(
-        CAST(SUM(b.searches) AS DECIMAL(10, 2)) / 
-        NULLIF(CAST(SUM(b.website_clicks) AS DECIMAL(10, 2)), 0),
+    round(
+        cast(sum(b.searches) as decimal(10, 2)) / 
+        nullif(cast(sum(b.website_clicks) as decimal(10, 2)), 0),
         2
-    ) AS search_conversion_rate,
+    ) as search_conversion_rate,
     
-    ROUND(
-        CAST(SUM(b.content_views) AS DECIMAL(10, 2)) /  
-        NULLIF(CAST(SUM(b.website_clicks) AS DECIMAL(10, 2)), 0), 
+    round(
+        cast(sum(b.content_views) as decimal(10, 2)) /  
+        nullif(cast(sum(b.website_clicks) as decimal(10, 2)), 0), 
         2
-    ) AS view_content_conversion_rate,
+    ) as view_content_conversion_rate,
     
-    ROUND(
-        CAST(SUM(b.add_to_cart) AS DECIMAL(10, 2)) /  
-        NULLIF(CAST(SUM(b.content_views) AS DECIMAL(10, 2)), 0),  
+    round(
+        cast(sum(b.add_to_cart) as decimal(10, 2)) /  
+        nullif(cast(sum(b.content_views) as decimal(10, 2)), 0),  
         2
-    ) AS add_to_cart_conversion_rate,
+    ) as add_to_cart_conversion_rate,
     
-    ROUND(
-        CAST(SUM(b.num_of_purchases) AS DECIMAL(10, 2)) /  
-        NULLIF(CAST(SUM(b.add_to_cart) AS DECIMAL(10, 2)), 0),  
+    round(
+        cast(sum(b.num_of_purchases) as decimal(10, 2)) /  
+        nullif(cast(sum(b.add_to_cart) as decimal(10, 2)), 0),  
         2
-    ) AS purchase_conversion_rate
-FROM 
+    ) as purchase_conversion_rate
+from 
     control_test_together b
-GROUP BY 
+group by
     b.campaign_name;
 ```
-`/* Which campaign has the highest Return on Investment (ROI)? Why this matters: ROI is one of the most critical metrics in marketing. It measures how effectively each campaign is turning its spending into actual revenue (or purchases, in this case).  */`
+`/* Which campaign has the highest Return on Investment (ROI)? Why this matters: ROI is one of the most critical metrics in marketing. It measures how effectively each campaign is turning its spending into actual revenue (or purchases, in this case). I found the Control campaign has a slightly higher ROI.  */`
 ```
-SELECT 
+select 
     b.campaign_name,
-    SUM(b.spend_usd) AS total_spend,
-    SUM(b.num_of_purchases) AS total_purchases,
-    ROUND(
-        SUM(CAST(b.num_of_purchases AS DECIMAL(10, 2))) /  
-        NULLIF(SUM(CAST(b.spend_usd AS DECIMAL(10, 2))), 0),  
+    sum(b.spend_usd) as total_spend,
+    sum(b.num_of_purchases) as total_purchases,
+    round(
+        sum(cast(b.num_of_purchases as decimal(10, 2))) /  
+        nullif(sum(cast(b.spend_usd as decimal(10, 2))), 0),  
         2
     ) * 100 AS roi
-FROM 
+from 
     control_test_together b
-GROUP BY 
+group by
     b.campaign_name; 
 ```
 <img width="700" alt="Screenshot 2025-03-12 at 11 07 04 PM" src="https://github.com/user-attachments/assets/f987043e-02ef-499d-b6a1-c7ed93e77220" />
@@ -238,13 +238,14 @@ select
     sum(b.num_of_purchases) as total_purchases, 
     cast(
         sum(cast(b.spend_usd as decimal(10, 2))) / 
-        nullif(sum(cast(b.num_of_purchases as decimal(10, 2))), 0) 
+        sum(cast(b.num_of_purchases as decimal(10, 2)))
         as decimal(10, 2)
     ) as cost_per_purchase 
 from 
     control_test_together b 
 group by 
     b.campaign_name;
+
 ```
 <img src="https://github.com/user-attachments/assets/3423e780-8f5e-43bf-bb4e-d6c596333fed" width="700">
 
