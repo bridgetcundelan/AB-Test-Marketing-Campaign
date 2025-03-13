@@ -9,6 +9,7 @@
 <b> The Dataset: </b> <br> 
 Public dataset found on Kaggle titled: [A/B Testing DataSet](https://www.kaggle.com/datasets/amirmotefaker/ab-testing-dataset/data)<br>
 
+
 A/B testing helps in finding a better approach to finding customers, marketing products, getting a higher reach, or anything that helps a business convert most of its target customers into actual customers. <br>
 
 Below are all the features in the dataset: <br>
@@ -227,7 +228,7 @@ FROM
 GROUP BY 
     b.campaign_name; 
 ```
-<img src="https://github.com/user-attachments/assets/43441e63-1cf9-4cea-bf55-17e87ddb7c37" width="700">
+<img width="700" alt="Screenshot 2025-03-12 at 11 07 04 PM" src="https://github.com/user-attachments/assets/f987043e-02ef-499d-b6a1-c7ed93e77220" />
 
 `/*How much did each campaign spend, and what was the relationship between spending and purchases? Why this matters: This question helps you understand how much money was invested in each campaign and whether the spending aligns with the number of purchases. */`
 ```
