@@ -285,7 +285,6 @@ Key Trends & Findings:<br>
 * As a result, the ROI of the Control Campaign was slightly higher than the Test Campaign, making it a more cost effective campaign. I believe this is due to the higher ad spend.
 * There is some null data on a couple of lines. It is unclear why there is missing data. Finding this out would help improve accuracy of analysis. <br>
 * Funnel Performance: For the Control Campaign, there is a higher "add to cart" conversion rate than a "purchase conversion rate" which is unexpected. Possible causes could be-- customers with multiple add to carts, abandoned carts, or technical difficulties with payment. I would recommend the marketing team have a look at this stage to uncover the reasons customers aren't converting to purchases & try and optimize. <br>
-* Funnel Performance: For both campaigns, there is a higher "search conversion rate" than a "view content conversion rate." Possible causes could be- customers browsing for prices and waiting to buy (price sensitivity) or delayed purchase intent. I would recommend the marketing team look at this stage to optimize. Perhaps they could offer customers who reach their webiste a coupon to encourage them further down the funnel. <br>
 * Ad spend vs customer purchase: customer purchases tended to correlated with ad spend and it went up and down during the month. <br>
 
 Suggested next steps for marketing team: <br>
