@@ -222,13 +222,14 @@ select
     sum(b.num_of_purchases) as total_purchases,
     round(
         sum(cast(b.num_of_purchases as decimal(10, 2))) /  
-        nullif(sum(cast(b.spend_usd as decimal(10, 2))), 0),  
+        sum(cast(b.spend_usd as decimal(10, 2))),  
         2
-    ) * 100 AS roi
+    ) * 100 as roi
 from 
     control_test_together b
 group by
     b.campaign_name; 
+
 ```
 <img width="700" alt="Screenshot 2025-03-12 at 11 07 04 PM" src="https://github.com/user-attachments/assets/f987043e-02ef-499d-b6a1-c7ed93e77220" />
 
