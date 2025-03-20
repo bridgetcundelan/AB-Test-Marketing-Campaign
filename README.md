@@ -121,7 +121,7 @@ create temp table control_test_together as (
 
 `--view new temp table `
 ```
-select * from control_test_together; <br>
+select * from control_test_together; 
  ```
 `/*Look at summary of sum and average for each column. What is the total and average ad spend, impressions, reach, clicks, searches, views, add to cart, and purchases. After performing this query, I downloaded a .csv file & visualized in tableau */`
 ```
