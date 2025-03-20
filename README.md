@@ -176,41 +176,43 @@ select * from control_test_together;
 `/* Next I want to evaluate funnel performance for both campaigns to see which is more effective at converting impressions into purchases. I will calculate the conversion rate at each stage for both campaigns.  Results show 8% CTR for test campaign and 5% for control campaign. */`
 
 ```
+
 select 
     b.campaign_name,
     round(
         cast(sum(b.website_clicks) as decimal(10, 2)) /  
-        nullif(cast(sum(b.impressions) as decimal(10, 2)), 0), 
+        cast(sum(b.impressions) as decimal(10, 2)), 
         2
     ) as click_through_rate,
     
     round(
         cast(sum(b.searches) as decimal(10, 2)) / 
-        nullif(cast(sum(b.website_clicks) as decimal(10, 2)), 0),
+        cast(sum(b.website_clicks) as decimal(10, 2)),
         2
     ) as search_conversion_rate,
     
     round(
         cast(sum(b.content_views) as decimal(10, 2)) /  
-        nullif(cast(sum(b.website_clicks) as decimal(10, 2)), 0), 
+        cast(sum(b.searches) as decimal(10, 2)), 
         2
     ) as view_content_conversion_rate,
     
     round(
         cast(sum(b.add_to_cart) as decimal(10, 2)) /  
-        nullif(cast(sum(b.content_views) as decimal(10, 2)), 0),  
+        cast(sum(b.content_views) as decimal(10, 2)),  
         2
     ) as add_to_cart_conversion_rate,
     
     round(
         cast(sum(b.num_of_purchases) as decimal(10, 2)) /  
-        nullif(cast(sum(b.add_to_cart) as decimal(10, 2)), 0),  
+        cast(sum(b.add_to_cart) as decimal(10, 2)),  
         2
     ) as purchase_conversion_rate
 from 
     control_test_together b
 group by
     b.campaign_name;
+
 ```
 `/* Which campaign has the highest Return on Investment (ROI)? Why this matters: ROI is one of the most critical metrics in marketing. It measures how effectively each campaign is turning its spending into actual revenue (or purchases, in this case). I found the Control campaign has a slightly higher ROI.  */`
 ```
